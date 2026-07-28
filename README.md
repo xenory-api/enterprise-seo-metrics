@@ -19,9 +19,9 @@ Whether you're building an SEO platform, website auditing solution, competitor a
 - [Code Examples](#code-examples)
 - [Data Dictionary](#metric-definitions)
 - [Guides](#guides)
-- [Rate Limits](#rate-limits)
-- [Error Handling](#error-handling)
-- [Versioning](#versioning)
+    - [Rate Limits](#rate-limits)
+    - [Error Handling](#error-handling)
+    - [Versioning](#versioning)
 - [Contributing](#contributing)
 - [Support](#support)
 
@@ -88,11 +88,11 @@ Additional endpoints may be introduced in future releases.
 
 | Directory | Purpose |
 |-----------|---------|
-| `/definitions` | SEO metric descriptions and terminology |
-| `/endpoints` | Individual endpoint documentation |
-| `/examples` | Request and response examples |
-| `/guides` | Integration guides and best practices |
-| `/schemas` | Response schemas and data models |
+| [`/definitions`](/definitions) | SEO metric descriptions and terminology |
+| [`/endpoints`](/endpoints) | Individual endpoint documentation |
+| [`/examples`](/examples) | Request and response examples |
+| [`/guides`](/guides) | Integration guides and best practices |
+| [`/schemas`](/schemas) | Response schemas and data models |
 
 # Quick Start
 
@@ -128,15 +128,15 @@ Endpoint documentation is organised by provider.
 
 | Category | Documentation |
 |----------|---------------|
-| Moz Metrics | `/endpoints/moz-metrics.md` |
-| Moz Legacy | `/endpoints/moz-legacy.md` |
-| Ahrefs Metrics | `/endpoints/ahrefs-metrics.md` |
-| Semrush Metrics | `/endpoints/semrush-metrics.md` |
-| Majestic Metrics | `/endpoints/majestic-metrics.md` |
-| Core Web Vitals | `/endpoints/core-web-vitals.md` |
-| Chrome UX Report | `/endpoints/crux-report.md` |
-| Anchor Text Analysis | `/endpoints/anchor-text-analysis.md` |
-| Social Shares | `/endpoints/social-shares.md` |
+| Moz Metrics | [`/endpoints/moz-metrics.md`](/endpoints/moz-metrics.md) |
+| Moz Legacy | [`/endpoints/moz-legacy.md`](/endpoints/moz-legacy.md) |
+| Ahrefs Metrics | [`/endpoints/ahrefs-metrics.md`](/endpoints/ahrefs-metrics.md) |
+| Semrush Metrics | [`/endpoints/semrush-metrics.md`](/endpoints/semrush-metrics.md) |
+| Majestic Metrics | [`/endpoints/majestic-metrics.md`](/endpoints/majestic-metrics.md) |
+| Core Web Vitals | [`/endpoints/core-web-vitals.md`](/endpoints/core-web-vitals.md) |
+| Chrome UX Report | [`/endpoints/crux-report.md`](/endpoints/crux-report.md) |
+| Anchor Text Analysis | [`/endpoints/anchor-text-analysis.md`](/endpoints/anchor-text-analysis.md) |
+| Social Shares | [`/endpoints/social-shares.md`](/endpoints/social-shares.md) |
 
 Each endpoint includes:
 
@@ -151,11 +151,19 @@ Each endpoint includes:
 
 # Response Schemas
 
-Complete JSON schemas are available in:
+Complete JSON schemas are available in [`/schemas`](/schemas).
 
-```
-/schemas
-```
+| Endpoint | Documentation |
+|----------|---------------|
+| Moz Metrics | [`/schemas/moz-metrics.md`](/schemas/moz-metrics.md) |
+| Moz Legacy Metrics | [`/schemas/moz-legacy.md`](/schemas/moz-legacy.md) |
+| Ahrefs Metrics | [`/schemas/ahrefs-metrics.md`](/schemas/ahrefs-metrics.md) |
+| Semrush Metrics | [`/schemas/semrush-metrics.md`](/schemas/semrush-metrics.md) |
+| Majestic Metrics | [`/schemas/majestic-metrics.md`](/schemas/majestic-metrics.md) |
+| Core Web Vitals | [`/schemas/core-web-vitals.md`](/schemas/core-web-vitals.md) |
+| Chrome UX Report | [`/schemas/crux-report.md`](/schemas/crux-report.md) |
+| Anchor Text Analysis | [`/schemas/anchor-text.md`](/schemas/anchor-text-analysis.md) |
+| Social Shares | [`/schemas/social-shares.md`](/schemas/social-shares.md) |
 
 These schemas describe request and response objects for every endpoint.
 
@@ -174,31 +182,37 @@ Available examples include (but are not limited to):
 - Java
 - Go
 
-Examples are located in:
+Examples are located in [`/examples`](/examples).
 
-```
-/examples
-```
+| Endpoint | Documentation |
+|----------|---------------|
+| Moz Metrics | [`/examples/moz-metrics.md`](/examples/moz-metrics.md) |
+| Moz Legacy Metrics | [`/examples/moz-legacy.md`](/examples/moz-legacy.md) |
+| Ahrefs Metrics | [`/examples/ahrefs-metrics.md`](/examples/ahrefs-metrics.md) |
+| Semrush Metrics | [`/examples/semrush-metrics.md`](/examples/semrush-metrics.md) |
+| Majestic Metrics | [`/examples/majestic-metrics.md`](/examples/majestic-metrics.md) |
+| Core Web Vitals | [`/examples/core-web-vitals.md`](/examples/core-web-vitals.md) |
+| Chrome UX Report | [`/examples/crux-report.md`](/examples/crux-report.md) |
+| Anchor Text Analysis | [`/examples/anchor-text.md`](/examples/anchor-text-analysis.md) |
+| Social Shares | [`/examples/social-shares.md`](/examples/social-shares.md) |
 
 # Metric Definitions
 
-The Enterprise SEO Metrics API returns data from multiple SEO and website intelligence sources. This section explains the meaning, calculation context, and intended usage of metrics returned in API responses.
-
-Understanding these definitions helps developers correctly interpret SEO data and build accurate reporting, analytics, and automation workflows.
+The Enterprise SEO Metrics API returns data from multiple SEO and website intelligence sources. This section explains the meaning, calculation context, and intended usage of metrics returned in API responses. Understanding these definitions helps developers correctly interpret SEO data and build accurate reporting, analytics, and automation workflows.
 
 Definitions are organised by data endpoint:
 
-| Provider | Documentation |
+| Endpoint | Documentation |
 |----------|---------------|
-| Moz Metrics | `/definitions/moz-metrics.md` |
-| Moz Legacy Metrics | `/definitions/moz-legacy.md` |
-| Ahrefs Metrics | `/definitions/ahrefs-metrics.md` |
-| Semrush Metrics | `/definitions/semrush-metrics.md` |
-| Majestic Metrics | `/definitions/majestic-metrics.md` |
-| Core Web Vitals | `/definitions/core-web-vitals.md` |
-| Chrome UX Report | `/definitions/crux-report.md` |
-| Anchor Text Analysis | `/definitions/anchor-text.md` |
-| Social Shares | `/definitions/social-shares.md` |
+| Moz Metrics | [`/definitions/moz-metrics.md`](/definitions/moz-metrics.md) |
+| Moz Legacy Metrics | [`/definitions/moz-legacy.md`](/definitions/moz-legacy.md) |
+| Ahrefs Metrics | [`/definitions/ahrefs-metrics.md`](/definitions/ahrefs-metrics.md) |
+| Semrush Metrics | [`/definitions/semrush-metrics.md`](/definitions/semrush-metrics.md) |
+| Majestic Metrics | [`/definitions/majestic-metrics.md`](/definitions/majestic-metrics.md) |
+| Core Web Vitals | [`/definitions/core-web-vitals.md`](/definitions/core-web-vitals.md) |
+| Chrome UX Report | [`/definitions/crux-report.md`](/definitions/crux-report.md) |
+| Anchor Text Analysis | [`/definitions/anchor-text.md`](/definitions/anchor-text-analysis.md) |
+| Social Shares | [`/definitions/social-shares.md`](/definitions/social-shares.md) |
 
 Each definition includes:
 
@@ -212,7 +226,7 @@ Each definition includes:
 
 # Guides
 
-The `/guides` directory contains additional documentation including:
+The [`/guides`](/guides) directory contains additional documentation including:
 
 - Authentication
 - Error handling
@@ -221,7 +235,7 @@ The `/guides` directory contains additional documentation including:
 - Version migration
 - Integration tutorials
 
-# Rate Limits
+## Rate Limits
 
 Rate limits vary depending on your subscription plan.
 
@@ -233,7 +247,7 @@ guides/rate-limits.md
 
 for complete details.
 
-# Error Handling
+## Error Handling
 
 Error responses follow a consistent JSON structure.
 
@@ -251,7 +265,7 @@ See:
 guides/error-handling.md
 ```
 
-# Versioning
+## Versioning
 
 API changes are versioned to maintain backwards compatibility whenever possible.
 
