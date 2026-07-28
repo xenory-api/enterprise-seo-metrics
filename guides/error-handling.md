@@ -15,9 +15,7 @@ This guide explains how the **Enterprise SEO Metrics API** reports errors, how t
 
 # Overview
 
-The Enterprise SEO Metrics API uses standard HTTP status codes to indicate whether a request completed successfully. That is, successful requests return a `200 OK` response.
-
-If a request cannot be processed, the API returns an appropriate HTTP status code together with a structured JSON error object describing the failure.
+The Enterprise SEO Metrics API uses standard HTTP status codes to indicate whether a request completed successfully. That is, successful requests return a `200 OK` response. If a request cannot be processed, the API returns an appropriate HTTP status code together with a structured JSON error object describing the failure.
 
 # Error Response Format
 
