@@ -109,13 +109,7 @@ Detailed instructions are available in the documentation.
 
 All API requests require authentication.
 
-See:
-
-```
-guides/authentication.md
-```
-
-for:
+See [`guides/authentication.md`](guides/authentication.md) for:
 
 - API keys
 - Authentication headers
@@ -239,13 +233,7 @@ The [`/guides`](/guides) directory contains additional documentation including:
 
 Rate limits vary depending on your subscription plan.
 
-See:
-
-```
-guides/rate-limits.md
-```
-
-for complete details.
+See [`guides/rate-limits.md`](guides/rate-limits.md) for complete details.
 
 ## Error Handling
 
@@ -259,11 +247,7 @@ Documentation includes:
 - Rate limiting responses
 - Internal server errors
 
-See:
-
-```
-guides/error-handling.md
-```
+See [`guides/error-handling.md`](guides/error-handling.md) for more details.
 
 ## Versioning
 
