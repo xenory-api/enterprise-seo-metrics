@@ -17,8 +17,7 @@ Whether you're building an SEO platform, website auditing solution, competitor a
 - [API Endpoints](#api-endpoints)
 - [Response Schemas](#response-schemas)
 - [Code Examples](#code-examples)
-- [SDKs](#sdks)
-- [OpenAPI Specification](#openapi-specification)
+- [Data Dictionary](#metric-definitions)
 - [Guides](#guides)
 - [Rate Limits](#rate-limits)
 - [Error Handling](#error-handling)
@@ -51,7 +50,6 @@ Available data includes:
 - JSON responses
 - Consistent request structure
 - Fast integration
-- OpenAPI specification
 - Production-ready endpoints
 - Enterprise scalability
 - Language-independent implementation
@@ -80,23 +78,21 @@ Additional endpoints may be introduced in future releases.
 
 ```
 /
+├── definitions/
 ├── endpoints/
 ├── examples/
 ├── guides/
-├── openapi/
 ├── schemas/
-├── sdk/
 └── README.md
 ```
 
 | Directory | Purpose |
 |-----------|---------|
+| `/definitions` | SEO metric descriptions and terminology |
 | `/endpoints` | Individual endpoint documentation |
 | `/examples` | Request and response examples |
 | `/guides` | Integration guides and best practices |
-| `/openapi` | OpenAPI specification files |
 | `/schemas` | Response schemas and data models |
-| `/sdk` | Official SDKs and client libraries |
 
 # Quick Start
 
@@ -132,15 +128,15 @@ Endpoint documentation is organised by provider.
 
 | Category | Documentation |
 |----------|---------------|
-| Moz Metrics | `/endpoints/moz/` |
-| Moz Legacy | `/endpoints/moz-legacy/` |
-| Ahrefs Metrics | `/endpoints/ahrefs/` |
-| Semrush Metrics | `/endpoints/semrush/` |
-| Majestic Metrics | `/endpoints/majestic/` |
-| Core Web Vitals | `/endpoints/core-web-vitals/` |
-| Chrome UX Report | `/endpoints/crux/` |
-| Anchor Text Analysis | `/endpoints/anchor-text/` |
-| Social Shares | `/endpoints/social-shares/` |
+| Moz Metrics | `/endpoints/moz-metrics.md` |
+| Moz Legacy | `/endpoints/moz-legacy.md` |
+| Ahrefs Metrics | `/endpoints/ahrefs-metrics.md` |
+| Semrush Metrics | `/endpoints/semrush-metrics.md` |
+| Majestic Metrics | `/endpoints/majestic-metrics.md` |
+| Core Web Vitals | `/endpoints/core-web-vitals.md` |
+| Chrome UX Report | `/endpoints/crux-report.md` |
+| Anchor Text Analysis | `/endpoints/anchor-text-analysis.md` |
+| Social Shares | `/endpoints/social-shares.md` |
 
 Each endpoint includes:
 
@@ -167,7 +163,7 @@ These schemas describe request and response objects for every endpoint.
 
 Example implementations are provided for multiple languages.
 
-Available examples include:
+Available examples include (but are not limited to):
 
 - cURL
 - JavaScript
@@ -184,37 +180,41 @@ Examples are located in:
 /examples
 ```
 
-# SDKs
+# Metric Definitions
 
-Official SDKs and client libraries are located in:
+The Enterprise SEO Metrics API returns data from multiple SEO and website intelligence sources. This section explains the meaning, calculation context, and intended usage of metrics returned in API responses.
 
-```
-/sdk
-```
+Understanding these definitions helps developers correctly interpret SEO data and build accurate reporting, analytics, and automation workflows.
 
-Each SDK includes installation instructions, configuration examples and sample requests.
+Definitions are organised by data endpoint:
 
-# OpenAPI Specification
+| Provider | Documentation |
+|----------|---------------|
+| Moz Metrics | `/definitions/moz-metrics.md` |
+| Moz Legacy Metrics | `/definitions/moz-legacy.md` |
+| Ahrefs Metrics | `/definitions/ahrefs-metrics.md` |
+| Semrush Metrics | `/definitions/semrush-metrics.md` |
+| Majestic Metrics | `/definitions/majestic-metrics.md` |
+| Core Web Vitals | `/definitions/core-web-vitals.md` |
+| Chrome UX Report | `/definitions/crux-report.md` |
+| Anchor Text Analysis | `/definitions/anchor-text.md` |
+| Social Shares | `/definitions/social-shares.md` |
 
-The complete OpenAPI specification is available in:
+Each definition includes:
 
-```
-/openapi
-```
-
-Supported formats include:
-
-- YAML
-- JSON
-
-The specification can be imported into API testing tools, documentation generators and code generators.
+- Metric name
+- Description
+- Data type
+- Example value
+- Interpretation
+- Common usage scenarios
+- Related metrics
 
 # Guides
 
 The `/guides` directory contains additional documentation including:
 
 - Authentication
-- Pagination
 - Error handling
 - Rate limits
 - Best practices
@@ -259,15 +259,13 @@ See the changelog for release history and migration information.
 
 # Contributing
 
-This repository contains the official documentation for the Enterprise SEO Metrics API.
+This repository contains the official documentation for the Enterprise SEO Metrics API. Documentation improvements, corrections and suggestions are more than welcome.
 
-Documentation improvements, corrections and suggestions are welcome.
-
-Please review the contribution guidelines before submitting changes.
+**Please review the contribution guidelines before submitting changes.**
 
 # Support
 
-For technical support, enterprise enquiries or partnership opportunities, please contact the API team through the official website.
+For technical support, business enquiries or partnership opportunities, please contact the API team through the official website or contact the API team directly on [RapidAPI](https://rapidapi.com/xenoryapi/api/enterprise-seo-metrics).
 
 ## License
 
