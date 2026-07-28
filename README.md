@@ -1,4 +1,4 @@
-# <img src="https://rapidapi-prod-apis.s3.amazonaws.com/c82c3355-997e-42c9-8427-94a731a6e56e.png" height="45" align="center"> Enterprise SEO Metrics API Documentation
+# <a href="https://rapidapi.com/xenoryapi/api/enterprise-seo-metrics"><img src="https://rapidapi-prod-apis.s3.amazonaws.com/c82c3355-997e-42c9-8427-94a731a6e56e.png" height="45" align="center"></a> Enterprise SEO Metrics API Documentation
 
 Comprehensive developer documentation for the **Enterprise SEO Metrics API**.
 
