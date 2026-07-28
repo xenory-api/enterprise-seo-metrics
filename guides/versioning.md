@@ -1,8 +1,6 @@
 # Versioning
 
-This guide explains how the **Enterprise SEO Metrics API** manages versions, introduces changes, and maintains compatibility between releases.
-
-Versioning ensures developers can understand when updates occur and determine whether changes require action within their applications.
+This guide explains how the **Enterprise SEO Metrics API** manages versions, introduces changes, and maintains compatibility between releases, thus ensuring developers can understand when updates occur and determine whether changes require action within their apps.
 
 # Table of Contents
 
