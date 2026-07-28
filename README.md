@@ -103,7 +103,7 @@ Integrating the API typically consists of four steps:
 3. Send requests to the required endpoint.
 4. Parse the JSON response.
 
-Detailed instructions are available in the documentation.
+Detailed instructions are available in the [documentation](/guides/quick-start.md).
 
 # Authentication
 
@@ -145,7 +145,7 @@ Each endpoint includes:
 
 # Response Schemas
 
-Complete JSON schemas are available in [`/schemas`](/schemas).
+Complete JSON schemas are available in [`/schemas`](/schemas):
 
 | Endpoint | Documentation |
 |----------|---------------|
@@ -176,7 +176,7 @@ Available examples include (but are not limited to):
 - Java
 - Go
 
-Examples are located in [`/examples`](/examples).
+Examples are located in [`/examples`](/examples):
 
 | Endpoint | Documentation |
 |----------|---------------|
