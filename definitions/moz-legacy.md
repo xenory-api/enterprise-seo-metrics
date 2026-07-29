@@ -9,28 +9,25 @@ These metrics originate from Moz's legacy link index and historical authority mo
 - [Overview](#overview)
 - [Authority Metrics](#authority-metrics)
   - [Domain Authority](#domain-authority-domain_authority)
+  - [MozRank](#mozrank-moz_rank)
   - [PageRank](#pagerank-page_rank)
   - [Spam Score](#spam-score-spam_score)
   - [Link Propensity](#link-propensity-link_propensity)
-- [Subdomain Link Metrics](#subdomain-link-metrics)
-  - [Pages to Subdomain](#pages-to-subdomain-pages_to_subdomain)
-  - [External Pages to Subdomain](#external-pages-to-subdomain-external_pages_to_subdomain)
-  - [Nofollow Pages to Subdomain](#nofollow-pages-to-subdomain-nofollow_pages_to_subdomain)
-  - [Redirect Pages to Subdomain](#redirect-pages-to-subdomain-redirect_pages_to_subdomain)
-  - [External Nofollow Pages to Subdomain](#external-nofollow-pages-to-subdomain-external_nofollow_pages_to_subdomain)
-  - [External Redirect Pages to Subdomain](#external-redirect-pages-to-subdomain-external_redirect_pages_to_subdomain)
-  - [Deleted Pages to Subdomain](#deleted-pages-to-subdomain-deleted_pages_to_subdomain)
-- [Root Domain Metrics](#root-domain-metrics)
-  - [Root Domains to Subdomain](#root-domains-to-subdomain-root_domains_to_subdomain)
-  - [Deleted Root Domains to Subdomain](#deleted-root-domains-to-subdomain-deleted_root_domains_to_subdomain)
-  - [Nofollow Root Domains to Subdomain](#nofollow-root-domains-to-subdomain-nofollow_root_domains_to_subdomain)
+- [Backlink Metrics](#backlink-metrics)
+  - [Inbound Links](#inbound-links-inbound_links)
+  - [Total Backlinks](#total-backlinks-total_backlinks)
+  - [Broken Backlinks](#broken-backlinks-broken_backlinks)
+  - [Referring Pages](#referring-pages-referring_pages)
+  - [Referring Domains](#referring-domains-referring_domains)
+  - [Referring Main Domains](#referring-main-domains-referring_main_domains)
+  - [Linking Root Domains](#linking-root-domains-linking_root_domains)
 - [Usage Notes](#usage-notes)
 
 # Overview
 
 The **Moz Legacy Metrics** endpoint exposes historical SEO metrics and backlink statistics from Moz's legacy index.
 
-Unlike the standard Moz Metrics endpoint, these values are preserved primarily for backwards compatibility with legacy applications and historical reporting workflows. Some metrics use older calculation methodologies and may differ significantly from their modern counterparts.
+Unlike the standard Moz Metrics endpoint, these values are preserved primarily for backwards compatibility with legacy applications and historical reporting workflows. Some metrics use older calculation methods and may differ significantly from their modern counterparts.
 
 These metrics are commonly used for:
 
@@ -84,6 +81,38 @@ Because the scoring methodology differs from current Moz metrics, legacy values 
 ### Notes
 
 This metric exists primarily for backwards compatibility.
+
+## MozRank (`moz_rank`)
+
+### Description
+
+MozRank is Moz's proprietary link popularity score that measures the relative importance of a webpage or domain based on the quantity and quality of inbound links.
+
+### Data Type
+
+`integer`
+
+### Example
+
+```json
+{
+  "moz_rank": 934
+}
+```
+
+### Interpretation
+
+Higher values generally indicate greater link popularity and stronger authority within Moz's legacy index.
+
+### Common Uses
+
+- Historical authority analysis
+- Legacy SEO reporting
+- Link popularity comparisons
+
+### Notes
+
+MozRank is specific to Moz's historical scoring model and should not be interpreted as Google's PageRank.
 
 ## PageRank (`page_rank`)
 
@@ -185,13 +214,13 @@ Higher values generally indicate websites with stronger outbound linking charact
 
 The exact calculation methodology is proprietary to Moz.
 
-# Subdomain Link Metrics
+# Backlink Metrics
 
-## Pages to Subdomain (`pages_to_subdomain`)
+## Inbound Links (`inbound_links`)
 
 ### Description
 
-The total number of pages linking to the analysed subdomain.
+The total number of inbound links discovered pointing to the analysed website.
 
 ### Data Type
 
@@ -201,61 +230,129 @@ The total number of pages linking to the analysed subdomain.
 
 ```json
 {
-  "pages_to_subdomain": 19444097169
+  "inbound_links": 19444097169
 }
 ```
 
 ### Why It Matters
 
-Provides an indication of the overall backlink footprint pointing towards the analysed subdomain.
+Provides an overall indication of the volume of links pointing to the analysed website.
 
-## External Pages to Subdomain (`external_pages_to_subdomain`)
-
-### Description
-
-The number of external pages linking to the analysed subdomain.
-
-## Nofollow Pages to Subdomain (`nofollow_pages_to_subdomain`)
+## Total Backlinks (`total_backlinks`)
 
 ### Description
 
-The number of linking pages containing backlinks marked with the `nofollow` attribute.
+The total number of backlinks identified by Moz's legacy index.
 
-## Redirect Pages to Subdomain (`redirect_pages_to_subdomain`)
+### Data Type
 
-### Description
+`integer`
 
-The number of linking pages that redirect visitors to the analysed subdomain.
+### Example
 
-## External Nofollow Pages to Subdomain (`external_nofollow_pages_to_subdomain`)
-
-### Description
-
-The number of external pages linking via `nofollow` backlinks.
-
-## External Redirect Pages to Subdomain (`external_redirect_pages_to_subdomain`)
-
-### Description
-
-The number of external redirecting pages pointing to the analysed subdomain.
-
-## Deleted Pages to Subdomain (`deleted_pages_to_subdomain`)
-
-### Description
-
-Previously discovered linking pages that have since been removed or are no longer accessible.
+```json
+{
+  "total_backlinks": 31208291664
+}
+```
 
 ### Why It Matters
 
-A high value may indicate historical link loss over time.
+Represents the complete backlink count used by the legacy metrics model.
 
-# Root Domain Metrics
-
-## Root Domains to Subdomain (`root_domains_to_subdomain`)
+## Broken Backlinks (`broken_backlinks`)
 
 ### Description
 
-The number of unique root domains linking to the analysed subdomain.
+The number of backlinks that point to URLs which are no longer accessible or return an error.
+
+### Data Type
+
+`integer`
+
+### Example
+
+```json
+{
+  "broken_backlinks": 667929049
+}
+```
+
+### Why It Matters
+
+Broken backlinks represent lost link equity and may highlight opportunities for redirects or content restoration.
+
+## Referring Pages (`referring_pages`)
+
+### Description
+
+The number of unique pages that contain one or more backlinks to the analysed website.
+
+### Data Type
+
+`integer`
+
+### Example
+
+```json
+{
+  "referring_pages": 25503478880
+}
+```
+
+### Why It Matters
+
+A larger number of referring pages generally indicates broader visibility across the web.
+
+## Referring Domains (`referring_domains`)
+
+### Description
+
+The number of unique domains linking to the analysed website.
+
+### Data Type
+
+`integer`
+
+### Example
+
+```json
+{
+  "referring_domains": 25912303
+}
+```
+
+### Why It Matters
+
+Links from a diverse set of domains are generally considered more valuable than many links from the same domain.
+
+## Referring Main Domains (`referring_main_domains`)
+
+### Description
+
+The number of unique main domains that refer traffic or backlinks to the analysed website.
+
+### Data Type
+
+`integer`
+
+### Example
+
+```json
+{
+  "referring_main_domains": 22429053
+}
+```
+
+### Why It Matters
+
+This metric provides a higher-level view of backlink diversity by consolidating related subdomains under their primary domain.
+
+## Linking Root Domains (`linking_root_domains`)
+
+### Description
+
+The number of unique root domains linking to the analysed website.
 
 Multiple backlinks from the same website count as a single linking root domain.
 
@@ -267,25 +364,13 @@ Multiple backlinks from the same website count as a single linking root domain.
 
 ```json
 {
-  "root_domains_to_subdomain": 15785699
+  "linking_root_domains": 15785699
 }
 ```
 
 ### Why It Matters
 
 Search engines generally value backlinks from a diverse range of unique websites.
-
-## Deleted Root Domains to Subdomain (`deleted_root_domains_to_subdomain`)
-
-### Description
-
-Root domains that previously linked to the analysed subdomain but are no longer active or available.
-
-## Nofollow Root Domains to Subdomain (`nofollow_root_domains_to_subdomain`)
-
-### Description
-
-Unique root domains providing backlinks exclusively marked with the `nofollow` attribute.
 
 # Usage Notes
 
@@ -302,8 +387,8 @@ Although several metric names are shared between legacy and modern Moz endpoints
 For this reason:
 
 - Legacy Domain Authority should not be directly compared with the current Domain Authority.
-- Historical PageRank values should be interpreted only within the context of legacy reporting.
-- Link counts may differ because of changes in Moz's crawl coverage and indexing methodology.
+- Historical MozRank and PageRank values should be interpreted only within the context of legacy reporting.
+- Backlink counts may differ because of changes in Moz's crawl coverage and indexing methodology.
 
 ## Data Freshness
 
