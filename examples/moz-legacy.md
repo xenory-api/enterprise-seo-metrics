@@ -903,23 +903,21 @@ Successful responses return `JSON` data:
 {
   "success": true,
   "results": {
-    "performance_ms": 1011,
+    "performance_ms": 189,
     "domain": "google.com",
     "metrics": {
-      "spam_score": 22,
+      "moz_rank": 934,
       "page_rank": 9.99,
-      "domain_authority": 100,
+      "spam_score": 22,
       "link_propensity": 129,
-      "pages_to_subdomain": 19444097169,
-      "nofollow_pages_to_subdomain": 3085674502,
-      "redirect_pages_to_subdomain": 776128160,
-      "external_pages_to_subdomain": 19224336868,
-      "external_nofollow_pages_to_subdomain": 3085674498,
-      "external_redirect_pages_to_subdomain": 775513421,
-      "deleted_pages_to_subdomain": 2636646206,
-      "root_domains_to_subdomain": 15785699,
-      "deleted_root_domains_to_subdomain": 1503770,
-      "nofollow_root_domains_to_subdomain": 1153531
+      "domain_authority": 100,
+      "inbound_links": 19444097169,
+      "total_backlinks": 31208291664,
+      "broken_backlinks": 667929049,
+      "referring_pages": 25503478880,
+      "referring_domains": 25912303,
+      "referring_main_domains": 22429053,
+      "linking_root_domains": 15785699
     }
   }
 }

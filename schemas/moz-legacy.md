@@ -50,46 +50,40 @@ These metrics are maintained for backwards compatibility with applications that 
         "metrics": {
           "type": "object",
           "properties": {
-            "spam_score": {
+            "moz_rank": {
               "type": "integer"
             },
             "page_rank": {
               "type": "number"
             },
-            "domain_authority": {
+            "spam_score": {
               "type": "integer"
             },
             "link_propensity": {
               "type": "integer"
             },
-            "pages_to_subdomain": {
+            "domain_authority": {
               "type": "integer"
             },
-            "nofollow_pages_to_subdomain": {
+            "inbound_links": {
               "type": "integer"
             },
-            "redirect_pages_to_subdomain": {
+            "total_backlinks": {
               "type": "integer"
             },
-            "external_pages_to_subdomain": {
+            "broken_backlinks": {
               "type": "integer"
             },
-            "external_nofollow_pages_to_subdomain": {
+            "referring_pages": {
               "type": "integer"
             },
-            "external_redirect_pages_to_subdomain": {
+            "referring_domains": {
               "type": "integer"
             },
-            "deleted_pages_to_subdomain": {
+            "referring_main_domains": {
               "type": "integer"
             },
-            "root_domains_to_subdomain": {
-              "type": "integer"
-            },
-            "deleted_root_domains_to_subdomain": {
-              "type": "integer"
-            },
-            "nofollow_root_domains_to_subdomain": {
+            "linking_root_domains": {
               "type": "integer"
             }
           }
@@ -109,20 +103,18 @@ Response
     ├── performance_ms
     ├── domain
     └── metrics
-        ├── spam_score
+        ├── moz_rank
         ├── page_rank
-        ├── domain_authority
+        ├── spam_score
         ├── link_propensity
-        ├── pages_to_subdomain
-        ├── nofollow_pages_to_subdomain
-        ├── redirect_pages_to_subdomain
-        ├── external_pages_to_subdomain
-        ├── external_nofollow_pages_to_subdomain
-        ├── external_redirect_pages_to_subdomain
-        ├── deleted_pages_to_subdomain
-        ├── root_domains_to_subdomain
-        ├── deleted_root_domains_to_subdomain
-        └── nofollow_root_domains_to_subdomain
+        ├── domain_authority
+        ├── inbound_links
+        ├── total_backlinks
+        ├── broken_backlinks
+        ├── referring_pages
+        ├── referring_domains
+        ├── referring_main_domains
+        └── linking_root_domains
 ```
 
 ## Top-Level Fields
@@ -142,22 +134,20 @@ Response
 
 ## Metrics Object
 
-| Field | Type | Nullable | Description |
-|------|------|----------|-------------|
-| spam_score | Integer | No | Estimated likelihood that the domain exhibits spam characteristics. |
-| page_rank | Number | No | Legacy Moz PageRank score. |
-| domain_authority | Integer | No | Legacy Moz Domain Authority score. |
-| link_propensity | Integer | No | Likelihood that pages on the domain link to external websites. |
-| pages_to_subdomain | Integer | No | Total pages associated with the analysed subdomain. |
-| nofollow_pages_to_subdomain | Integer | No | Pages on the subdomain containing nofollow links. |
-| redirect_pages_to_subdomain | Integer | No | Redirecting pages associated with the subdomain. |
-| external_pages_to_subdomain | Integer | No | External pages linking to the subdomain. |
-| external_nofollow_pages_to_subdomain | Integer | No | External pages providing nofollow backlinks to the subdomain. |
-| external_redirect_pages_to_subdomain | Integer | No | External redirecting pages linking to the subdomain. |
-| deleted_pages_to_subdomain | Integer | No | Deleted pages associated with the subdomain. |
-| root_domains_to_subdomain | Integer | No | Unique root domains linking to the subdomain. |
-| deleted_root_domains_to_subdomain | Integer | No | Deleted root domains previously linking to the subdomain. |
-| nofollow_root_domains_to_subdomain | Integer | No | Root domains providing nofollow backlinks to the subdomain. |
+| Field                  | Type    | Nullable | Description                                                         |
+| -----------------------| ------- | -------- | ------------------------------------------------------------------- |
+| moz_rank               | Integer | No       | Legacy MozRank score representing link popularity.                  |
+| page_rank              | Number  | No       | Legacy Moz PageRank score.                                          |
+| spam_score             | Integer | No       | Estimated likelihood that the domain exhibits spam characteristics. |
+| link_propensity        | Integer | No       | Likelihood that pages on the domain link to external websites.      |
+| domain_authority       | Integer | No       | Legacy Moz Domain Authority score.                                  |
+| inbound_links          | Integer | No       | Total inbound links pointing to the analysed domain.                |
+| total_backlinks        | Integer | No       | Total backlinks discovered in Moz's legacy index.                   |
+| broken_backlinks       | Integer | No       | Backlinks pointing to inaccessible or broken pages.                 |
+| referring_pages        | Integer | No       | Number of unique pages linking to the analysed domain.              |
+| referring_domains      | Integer | No       | Number of unique domains linking to the analysed domain.            |
+| referring_main_domains | Integer | No       | Number of unique main domains linking to the analysed domain.       |
+| linking_root_domains   | Integer | No       | Number of unique root domains linking to the analysed domain.       |
 
 ## Data Types
 
@@ -183,23 +173,21 @@ Applications should still be designed to safely handle new optional fields that 
 {
   "success": true,
   "results": {
-    "performance_ms": 126,
+    "performance_ms": 189,
     "domain": "google.com",
     "metrics": {
-      "spam_score": 1,
-      "page_rank": 6.8,
-      "domain_authority": 95,
-      "link_propensity": 89,
-      "pages_to_subdomain": 27456321,
-      "nofollow_pages_to_subdomain": 41789,
-      "redirect_pages_to_subdomain": 3181,
-      "external_pages_to_subdomain": 218943,
-      "external_nofollow_pages_to_subdomain": 48216,
-      "external_redirect_pages_to_subdomain": 7314,
-      "deleted_pages_to_subdomain": 1824,
-      "root_domains_to_subdomain": 6894123,
-      "deleted_root_domains_to_subdomain": 47,
-      "nofollow_root_domains_to_subdomain": 73542
+      "moz_rank": 934,
+      "page_rank": 9.99,
+      "spam_score": 22,
+      "link_propensity": 129,
+      "domain_authority": 100,
+      "inbound_links": 19444097169,
+      "total_backlinks": 31208291664,
+      "broken_backlinks": 667929049,
+      "referring_pages": 25503478880,
+      "referring_domains": 25912303,
+      "referring_main_domains": 22429053,
+      "linking_root_domains": 15785699
     }
   }
 }

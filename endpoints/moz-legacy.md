@@ -1,6 +1,6 @@
 # Moz Legacy Metrics API
 
-Retrieve legacy Moz SEO metrics for a root domain, including historical authority scores, PageRank, backlink statistics, and subdomain link metrics maintained for backwards compatibility.
+Retrieve legacy Moz SEO metrics for a root domain, including historical authority scores, PageRank, backlink statistics, and legacy link metrics maintained for backwards compatibility.
 
 ## Overview
 
@@ -11,13 +11,15 @@ This endpoint is intended for applications that rely on historical Moz metric de
 Use this endpoint to retrieve:
 
 - Domain Authority (Legacy)
+- MozRank
 - PageRank
 - Spam Score
 - Link Propensity
-- Root domains linking to the subdomain
-- External backlink statistics
-- Redirect and nofollow link metrics
-- Historical page counts
+- Total backlinks
+- Inbound links
+- Referring pages and domains
+- Linking root domains
+- Broken backlink statistics
 
 Common use cases include:
 
@@ -77,23 +79,21 @@ curl --request POST \
 {
   "success": true,
   "results": {
-    "performance_ms": 1011,
+    "performance_ms": 189,
     "domain": "google.com",
     "metrics": {
-      "spam_score": 22,
+      "moz_rank": 934,
       "page_rank": 9.99,
-      "domain_authority": 100,
+      "spam_score": 22,
       "link_propensity": 129,
-      "pages_to_subdomain": 19444097169,
-      "nofollow_pages_to_subdomain": 3085674502,
-      "redirect_pages_to_subdomain": 776128160,
-      "external_pages_to_subdomain": 19224336868,
-      "external_nofollow_pages_to_subdomain": 3085674498,
-      "external_redirect_pages_to_subdomain": 775513421,
-      "deleted_pages_to_subdomain": 2636646206,
-      "root_domains_to_subdomain": 15785699,
-      "deleted_root_domains_to_subdomain": 1503770,
-      "nofollow_root_domains_to_subdomain": 1153531
+      "domain_authority": 100,
+      "inbound_links": 19444097169,
+      "total_backlinks": 31208291664,
+      "broken_backlinks": 667929049,
+      "referring_pages": 25503478880,
+      "referring_domains": 25912303,
+      "referring_main_domains": 22429053,
+      "linking_root_domains": 15785699
     }
   }
 }
@@ -112,7 +112,7 @@ curl --request POST \
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `performance_ms` | integer | Total API processing time in milliseconds |
+| `performance_ms` | integer | API processing time in milliseconds |
 | `domain` | string | Analysed root domain |
 | `metrics` | object | Legacy Moz SEO metrics |
 
@@ -120,20 +120,18 @@ curl --request POST \
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `spam_score` | integer | Legacy Moz Spam Score |
+| `moz_rank` | integer | Legacy MozRank score |
 | `page_rank` | number | Legacy Moz PageRank value |
-| `domain_authority` | integer | Legacy Moz Domain Authority score |
+| `spam_score` | integer | Legacy Moz Spam Score |
 | `link_propensity` | integer | Legacy link propensity metric |
-| `pages_to_subdomain` | integer | Total pages linking to the analysed subdomain |
-| `nofollow_pages_to_subdomain` | integer | Nofollow pages linking to the subdomain |
-| `redirect_pages_to_subdomain` | integer | Redirect pages linking to the subdomain |
-| `external_pages_to_subdomain` | integer | External pages linking to the subdomain |
-| `external_nofollow_pages_to_subdomain` | integer | External nofollow pages linking to the subdomain |
-| `external_redirect_pages_to_subdomain` | integer | External redirect pages linking to the subdomain |
-| `deleted_pages_to_subdomain` | integer | Deleted pages previously linking to the subdomain |
-| `root_domains_to_subdomain` | integer | Unique root domains linking to the subdomain |
-| `deleted_root_domains_to_subdomain` | integer | Deleted root domains previously linking to the subdomain |
-| `nofollow_root_domains_to_subdomain` | integer | Root domains providing only nofollow links |
+| `domain_authority` | integer | Legacy Moz Domain Authority score |
+| `inbound_links` | integer | Total inbound links pointing to the analysed domain |
+| `total_backlinks` | integer | Total backlinks discovered by Moz's legacy index |
+| `broken_backlinks` | integer | Backlinks pointing to inaccessible or broken pages |
+| `referring_pages` | integer | Unique pages linking to the analysed domain |
+| `referring_domains` | integer | Unique domains linking to the analysed domain |
+| `referring_main_domains` | integer | Unique main domains linking to the analysed domain |
+| `linking_root_domains` | integer | Unique root domains linking to the analysed domain |
 
 For detailed explanations of each metric, see:
 
@@ -220,7 +218,8 @@ This endpoint is well suited for:
 # Related Definitions
 
 - Domain Authority
+- MozRank
 - PageRank
 - Spam Score
-- Root Domains to Subdomain
 - Link Propensity
+- Linking Root Domains
